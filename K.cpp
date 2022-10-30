@@ -3,31 +3,17 @@ using namespace std;
 
 int main()
 {
-    int N, i, Min=INT_MAX, C=0;
+    int N, i, Sum=0;
     cin>>N;
-    vector<int>A(N);
+    char S[N];
     for( i=0; i<N; i++ )
     {
-        cin>>A[i];
-        if( Min>A[i] )
+        cin>>S[i];
+        if( S[i]>=48 && S[i]<=57 )
         {
-            Min = A[i];
+            Sum = Sum+ ( S[i]-48 );
         }
     }
-    for( i=0; i<N; i++ )
-    {
-        if( A[i]==Min )
-        {
-            C++;
-        }
-    }
-    if( C%2!=0 )
-    {
-        cout<<"Lucky"<<endl;
-    }
-    else
-    {
-        cout<<"Unlucky"<<endl;
-    }
+    cout<<Sum<<endl;
     return 0;
 }
